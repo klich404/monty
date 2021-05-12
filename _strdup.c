@@ -16,9 +16,13 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
+	printf("------\n");
 	while (str[i] != '\0')
+	{
+		putchar(str[i]);
 		i++;
-
+	}
+	printf("------\n");
 	str2 = malloc(sizeof(char) * (i + 1));
 
 	if (str2 == NULL)
@@ -27,5 +31,6 @@ char *_strdup(char *str)
 	for (x = 0; x <= i; x++)
 		str2[x] = str[x];
 
+	printf("\n--------\nstr2: %s-------\n", str2);
 	return (str2);
 }
