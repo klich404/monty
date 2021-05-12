@@ -7,14 +7,13 @@
 * Return: An array that contains each word splitted.
 */
 
-char **tokenizer(char *input, char *sep)
+char **tokenizer(char *str, char *sep)
 {
 	char *token_cp = NULL, *str_dup, *token = NULL;
 	char **array_input = NULL;
 	int i = 0, x = 0;
 
-	str_dup = _strdup(input);
-	printf("str_dup: %s\n", str_dup);
+	str_dup = _strdup(str);
 	token_cp = strtok(str_dup, sep);
 	while (token_cp)
 	{
@@ -25,7 +24,7 @@ char **tokenizer(char *input, char *sep)
 	if (!array_input)
 		return (NULL);
 
-	token = strtok(input, sep);
+	token = strtok(str, sep);
 	while (token != NULL)
 	{
 		array_input[i] = token;

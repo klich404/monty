@@ -18,5 +18,6 @@ int main(int argc, char *argv[])
 		printf("%s\n", opcodes[i]);
 		i++;
 	}
+	free(opcodes);
 	return(0);
 }
