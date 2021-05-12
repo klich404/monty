@@ -16,7 +16,7 @@ char *read_monty(char *filename)
 	if (fd == 00)
 		return(0);
 
-	buffer = malloc(sizeof(char) * fd);
+	buffer = malloc(BUFSIZ);
 	if (buffer == NULL)
 		return(0);
 
@@ -24,5 +24,7 @@ char *read_monty(char *filename)
 	if (status == 00)
 		return(0);
 
+	close(fd);
+	printf("buffer: %s", buffer);
 	return(buffer);
 }

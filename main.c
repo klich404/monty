@@ -7,17 +7,18 @@
 int main(int argc, char *argv[])
 {
     char *buffer = NULL, *filename = NULL, **opcodes = NULL;
-	int i = 0, len_buf;
+	int i = 0;
 
     filename = argv[1];
     buffer = read_monty(filename);
 
 	opcodes = tokenizer(buffer, " ");
-	while(opcodes[i] != NULL)
-	{
-		printf("%s\n", opcodes[i]);
-		i++;
-	}
+	// while(opcodes[i] != NULL)
+	// {
+	// 	printf("%s\n", opcodes[i]);
+	// 	i++;
+	// }
 	free(opcodes);
+	free(buffer);
 	return(0);
 }
