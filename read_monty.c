@@ -25,6 +25,5 @@ char *read_monty(char *filename)
 		return(0);
 
 	close(fd);
-	printf("buffer: %s", buffer);
 	return(buffer);
 }

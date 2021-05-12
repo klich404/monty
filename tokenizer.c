@@ -13,10 +13,7 @@ char **tokenizer(char *str, char *sep)
 	char **array_input = NULL;
 	int i = 0, x = 0;
 
-	printf("str: %s", str);
 	str_dup = _strdup(str);
-	printf("str: %s", str);
-
 	token_cp = strtok(str_dup, sep);
 	while (token_cp)
 	{
