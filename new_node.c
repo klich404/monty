@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void new_node(stack_t **head, __attribute__((unused))int line)
+void new_node(stack_t *head)
 {
 	stack_t *new;
 
@@ -13,21 +13,21 @@ void new_node(stack_t **head, __attribute__((unused))int line)
 
 	//new->n = n;
 
-	if (*head == NULL)
+	if (head == NULL)
 	{
 		new->prev = NULL;
 		new->next = NULL;
-		*head = new;
+		head = new;
 	}
 	else
 	{
-		while ((*head)->prev != NULL)
+		while ((head)->prev != NULL)
 		{
-			(*head) = (*head)->prev;
+			(head) = (head)->prev;
 		}
-		(*head)->prev = new;
-		new->next = *head;
+		(head)->prev = new;
+		new->next = head;
 		new->prev = NULL;
-		*head = new;
+		head = new;
 	}
 }

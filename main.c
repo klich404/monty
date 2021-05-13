@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
     buffer = read_monty(filename);
 
 	opcodes = tokenizer(buffer, " ");
-	mont_func(opcodes, 1, &head);
+	mont_func(opcodes[0], head, 1);
+
 	free(opcodes);
 	free(buffer);
 	return(0);
