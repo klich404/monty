@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * _pall - push a node
+ * @head: the head of the linked list
+ * @line: the line counter
+ */
+
 void _pall(stack_t **head, unsigned int line)
 {
 	size_t x = 0;

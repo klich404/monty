@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* _token - Splits a string by a determined character.
+* tokenizer - Splits a string by a determined character.
 * @str: String to split.
 * @sep: Character used to split.
 * Return: An array that contains each word splitted.
@@ -22,7 +22,10 @@ char **tokenizer(char *str, char *sep)
 	}
 	array_input = malloc(sizeof(char *) * (x + 1));
 	if (!array_input)
-		return (NULL);
+	{
+		printf("Error: malloc failed");
+		exit (EXIT_FAILURE);
+	}
 	token = strtok(str, sep);
 	while (token != NULL)
 	{

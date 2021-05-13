@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * _push - push a node
+ * @head: the head of the linked list
+ * @line: the line counter
+ */
+
 void _push(stack_t **head, unsigned int line)
 {
 	stack_t *new = NULL;
@@ -7,7 +13,10 @@ void _push(stack_t **head, unsigned int line)
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
+	{
+		printf("Error: malloc failed");
 		exit(EXIT_FAILURE);
+	}
 
 	new->n = value;
 

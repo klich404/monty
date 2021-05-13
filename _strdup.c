@@ -15,16 +15,17 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-
 	while (str[i] != '\0')
 	{
 		i++;
 	}
 
 	str2 = malloc(sizeof(char) * (i + 1));
-
 	if (str2 == NULL)
-		return (NULL);
+	{
+		printf("Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 
 	for (x = 0; x <= i; x++)
 		str2[x] = str[x];
