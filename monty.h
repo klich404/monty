@@ -37,10 +37,13 @@ typedef struct instruction_s
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int value;
+
 char *read_monty(char *filename);
 char **tokenizer(char *str, char *sep);
 char *_strdup(char *str);
 void mont_func(char *array, stack_t **head, unsigned int line);
-void new_node(stack_t **head, unsigned int line);
+void _push(stack_t **head, unsigned int line);
+void _pall(stack_t **h, unsigned int line);
 
 #endif

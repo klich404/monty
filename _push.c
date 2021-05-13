@@ -1,18 +1,15 @@
 #include "monty.h"
 
-void new_node(stack_t **head, unsigned int line)
+void _push(stack_t **head, unsigned int line)
 {
-	stack_t *new;
+	stack_t *new = NULL;
 	(void)line;
-
-	if (*head == NULL)
-		exit(EXIT_FAILURE);
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		exit(EXIT_FAILURE);
 
-	/*new->n = n;*/
+	new->n = value;
 
 	if (*head == NULL)
 	{

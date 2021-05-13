@@ -9,7 +9,7 @@
 
 char **tokenizer(char *str, char *sep)
 {
-	char *token_cp = NULL, *str_dup, *token = NULL;
+	char *token_cp = NULL, *str_dup = NULL, *token = NULL;
 	char **array_input = NULL;
 	int i = 0, x = 0;
 
@@ -23,7 +23,6 @@ char **tokenizer(char *str, char *sep)
 	array_input = malloc(sizeof(char *) * (x + 1));
 	if (!array_input)
 		return (NULL);
-
 	token = strtok(str, sep);
 	while (token != NULL)
 	{

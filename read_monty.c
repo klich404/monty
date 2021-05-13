@@ -6,8 +6,8 @@
 
 char *read_monty(char *filename)
 {
-	int fd, status;
-	char *buffer;
+	int fd = 0, status = 0;
+	char *buffer = NULL;
 
 	if (filename == NULL)
 		return (0);
