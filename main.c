@@ -6,14 +6,15 @@
 
 int main(int argc, char *argv[])
 {
-    char *buffer = NULL, *filename = NULL, **opcodes = NULL;
-	int i = 0;
+	char *buffer = NULL, *filename = NULL, **opcodes = NULL;
+	stack_t *head = NULL;
+	(void)argc;
 
-    filename = argv[1];
-    buffer = read_monty(filename);
 
+	filename = argv[1];
+	buffer = read_monty(filename);
 	opcodes = tokenizer(buffer, " ");
-	mont_func(opcodes[0], head, 1);
+	mont_func("push", &head, 1);
 
 	free(opcodes);
 	free(buffer);
