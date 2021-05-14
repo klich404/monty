@@ -45,5 +45,8 @@ char *_strdup(char *str);
 void mont_func(char *array, stack_t **head, unsigned int line);
 void _push(stack_t **head, unsigned int line);
 void _pall(stack_t **h, unsigned int line);
+void _pop(stack_t **head, unsigned int line);
+void _nop(stack_t **head, unsigned int line);
+void _pint(stack_t **head, unsigned int line);
 
 #endif

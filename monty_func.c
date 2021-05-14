@@ -13,6 +13,9 @@ void mont_func(char *array, stack_t **head, unsigned int line)
 	instruction_t ops[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 	while (ops[i].opcode)
@@ -23,7 +26,7 @@ void mont_func(char *array, stack_t **head, unsigned int line)
 	}
 	if (ops == NULL)
 	{
-		printf("L%d: unknown instruction %s", line, array);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, array);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -23,7 +23,7 @@ char **tokenizer(char *str, char *sep)
 	array_input = malloc(sizeof(char *) * (x + 1));
 	if (!array_input)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(str_dup);
 		free(array_input);
 		exit(EXIT_FAILURE);

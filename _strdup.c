@@ -23,7 +23,7 @@ char *_strdup(char *str)
 	str2 = malloc(sizeof(char) * (i + 1));
 	if (str2 == NULL)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(str2);
 		exit(EXIT_FAILURE);
 	}

@@ -10,26 +10,25 @@
 int main(int argc, char *argv[])
 {
 	char *buffer = NULL, *filename = NULL, **lines = NULL, **opcodes = NULL;
-	char *cmd[] = {"push", "pall"};
+	char *cmd[] = {"push", "pall", "pint", "pop", "nop"};
 	stack_t *head = NULL;
 	unsigned int x = 0, j = 0;
 	int status = -1;
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
-
 	filename = argv[1];
 	buffer = read_monty(filename);
 	lines = tokenizer(buffer, "\n");
-	while (lines[x])
+	for (x = 0; lines[x]; x++)
 	{
 		opcodes = tokenizer(lines[x], " ");
 		if (opcodes[1])
 			value = atoi(opcodes[1]);
-		while (cmd[j])
+		for (j = 0; cmd[j]; j++)
 		{
 			if (strcmp(opcodes[0], cmd[j]) == 0)
 			{
@@ -39,14 +38,12 @@ int main(int argc, char *argv[])
 			}
 			else
 				status = -1;
-			j++;
 		}
 		if (status != 1)
 		{
-			printf("L%d: unknown instruction %s\n", (x + 1), opcodes[0]);
-			exit (EXIT_FAILURE);
+			fprintf(stderr, "L%d: unknown instruction %s\n", (x + 1), opcodes[0]);
+			exit(EXIT_FAILURE);
 		}
-		x++;
 	}
 	free(opcodes);
 	free(lines);

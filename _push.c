@@ -14,7 +14,7 @@ void _push(stack_t **head, unsigned int line)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(new);
 		exit(EXIT_FAILURE);
 	}

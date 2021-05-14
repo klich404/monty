@@ -13,21 +13,21 @@ char *read_monty(char *filename)
 
 	if (filename == NULL)
 	{
-		printf("Error: Can't open file %s", filename);
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
 	fd = open(filename, O_RDONLY);
 	if (fd == 00)
 	{
-		printf("Error: Can't open file %s", filename);
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
 	buffer = malloc(BUFSIZ);
 	if (buffer == NULL)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(buffer);
 		exit(EXIT_FAILURE);
 	}
