@@ -24,6 +24,7 @@ char *_strdup(char *str)
 	if (str2 == NULL)
 	{
 		printf("Error: malloc failed");
+		free(str2);
 		exit(EXIT_FAILURE);
 	}
 

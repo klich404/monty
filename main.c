@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file");
-		exit (EXIT_FAILURE);
+		printf("USAGE: monty file"); 
+		exit(EXIT_FAILURE);
 	}
 
 	filename = argv[1];

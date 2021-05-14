@@ -24,7 +24,9 @@ char **tokenizer(char *str, char *sep)
 	if (!array_input)
 	{
 		printf("Error: malloc failed");
-		exit (EXIT_FAILURE);
+		free(str_dup);
+		free(array_input);
+		exit(EXIT_FAILURE);
 	}
 	token = strtok(str, sep);
 	while (token != NULL)

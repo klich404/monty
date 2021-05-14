@@ -24,6 +24,6 @@ void mont_func(char *array, stack_t **head, unsigned int line)
 	if (ops == NULL)
 	{
 		printf("L%d: unknown instruction %s", line, array);
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 }

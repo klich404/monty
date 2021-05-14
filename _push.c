@@ -15,6 +15,7 @@ void _push(stack_t **head, unsigned int line)
 	if (new == NULL)
 	{
 		printf("Error: malloc failed");
+		free(new);
 		exit(EXIT_FAILURE);
 	}
 

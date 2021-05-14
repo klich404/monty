@@ -28,6 +28,7 @@ char *read_monty(char *filename)
 	if (buffer == NULL)
 	{
 		printf("Error: malloc failed");
+		free(buffer);
 		exit(EXIT_FAILURE);
 	}
 
