@@ -31,18 +31,19 @@ int main(int argc, char *argv[])
 			value = atoi(opcodes[1]);
 		while (cmd[j])
 		{
-			if (opcodes[0] == cmd[j])
+			if (strcmp(opcodes[0], cmd[j]) == 0)
 			{
 				mont_func(opcodes[0], &head, (x + 1));
 				status = 1;
-				printf("-------------\n");
 				break;
 			}
+			else
+				status = -1;
 			j++;
 		}
 		if (status != 1)
 		{
-			printf("Llines: unknown instruction array");
+			printf("L%d: unknown instruction %s\n", (x + 1), opcodes[0]);
 			exit (EXIT_FAILURE);
 		}
 		x++;
